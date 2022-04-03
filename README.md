@@ -28,20 +28,11 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ## theme:
 
-    @primaryColor : #b2dfdb;
-    @primaryLightColor : #e5ffff;
-    @primaryDarkColor : #82ada9;
-    @secondaryColor : #b2dfdb;
-    @secondaryLightColor : #e5ffff;
-    @secondaryDarkColor : #82ada9;
-    @primaryTextColor : #000000;
-    @secondaryTextColor : #000000;
-
-  <color name="primaryColor">#b2dfdb</color>
-  <color name="primaryLightColor">#e5ffff</color>
-  <color name="primaryDarkColor">#82ada9</color>
-  <color name="secondaryColor">#b2dfdb</color>
-  <color name="secondaryLightColor">#e5ffff</color>
-  <color name="secondaryDarkColor">#82ada9</color>
-  <color name="primaryTextColor">#000000</color>
-  <color name="secondaryTextColor">#000000</color>
+    --primaryColor: #b2dfdb;
+    --primaryLightColor: #e5ffff;
+    --primaryDarkColor: #82ada9;
+    --secondaryColor: #b2dfdb;
+    --secondaryLightColor: #e5ffff;
+    --secondaryDarkColor: #82ada9;
+    --primaryTextColor: #000000;
+    --secondaryTextColor: #000000;
