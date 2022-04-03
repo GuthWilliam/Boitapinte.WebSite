@@ -16,10 +16,4 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const element = fixture.nativeElement;
-    expect(element.querySelector('h1').textContent).withContext('You should have an `h1` with the text Welcome').toContain('Welcome');
-  });
 });

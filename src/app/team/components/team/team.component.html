@@ -1,0 +1,6 @@
+<div class="container-fluid">
+  <h2 class="text-center">L'Equipe</h2>
+  <div *ngFor="let member of Team" style="margin-top: 30px;">
+    <bap-team-member [teamMemberModel]="member"></bap-team-member>
+  </div>
+</div>

@@ -1,0 +1,16 @@
+.navbar {
+    background-color: var(--primaryColor);
+}
+
+a {
+    color: var(--primaryTextColor);
+    font-family: 'Roboto', sans-serif;
+}
+
+.active {
+    color: var(--primaryLightColor);
+}
+
+.navbar-nav .nav-link.active {
+    color: var(--primaryLightColor);
+}

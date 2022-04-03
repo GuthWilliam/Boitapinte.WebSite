@@ -1,3 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
 @import '~bootstrap/dist/css/bootstrap.css';
 @import '~font-awesome/css/font-awesome.css';
+
+:root {
+    --primaryColor: #b2dfdb;
+    --primaryLightColor: #e5ffff;
+    --primaryDarkColor: #82ada9;
+    --secondaryColor: #b2dfdb;
+    --secondaryLightColor: #e5ffff;
+    --secondaryDarkColor: #82ada9;
+    --primaryTextColor: #000000;
+    --secondaryTextColor: #000000;
+}
