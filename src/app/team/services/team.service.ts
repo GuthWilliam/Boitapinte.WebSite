@@ -16,26 +16,26 @@ export class TeamService {
         mail: 'Alex@boitapinte.fr',
         description: 
         ` Commercial aguérri et zythologue à ces heures perdu, Alexandre sera votre contact principal pour toutes vos questions. 
-         Amical et entrepreneur il sera vous conseiller sur les meilleurs solutions pour votre projet. Plus qu'un simple contact,
-         il vous accompagnera durant tout de celui-ci et probablement bien après.`,
+         Amical et entrepreneur il sera vous conseiller sur les meilleures solutions pour votre projet. Plus qu'un simple contact,
+         il vous accompagnera durant l'ensemble du processus et fort probablement bien après.`,
       },
       {
         name: 'Damien',
         job: 'Ingénieur mécanique.',
         mail: '',
         description: 
-        ` Ingénieur mécanique, professeur d'université et bricoleur pationné, damien est la pierre angulaire du projet. 
-        Il est le concepteur et installateur du boitier connecté 'Boitapinte'.
-        Son imagination sans limites lui permettent de mettre en place notre solution dans des installation souvent très alambiqué et cela avec le moindre impact sur l'existant. `,
+        ` Ingénieur mécanique, professeur d'université et bricoleur passionné, damien est la pierre angulaire du projet. 
+        Il est le concepteur et l'installateur du boitier connecté 'Boitapinte'.
+        Son imagination sans limites lui permettront de mettre en place notre solution dans les situations les plus alambiquées et cela avec un minimum d'impact sur l'existant. `,
       },
       {
         name: 'Nicolas',
         job: 'Docteur en génie industriel.',
         mail: '',
         description: 
-        `Doctorant en logistique, sa rigueur et son experience en gestion de projet font de nicolas un atout majeur pour l'equipe.
+        `Doctorant en logistique, sa rigueur et son expérience en gestion de projet font de Nicolas un atout majeur pour l'équipe.
          Son esprit analytique et son sens de l'observation vous aidera à trouver les solutions les plus efficaces pour votre projet.
-         Il sera sans aucun doute optimiser l'ensemble vos processus logistiques.`
+         Il sera sans aucun doute optimiser l'ensemble de vos processus logistiques.`
       },
       {
         name: 'William',

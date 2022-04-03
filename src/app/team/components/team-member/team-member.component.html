@@ -4,9 +4,12 @@
         <img class="img-profil" [src]="getImageUrl()" [alt]="teamMemberModel.name">
     </div>
     <div class="col-md-8" style="padding-left: 20px;padding-top: 10px;">
-        <h3>{{ teamMemberModel.name }} <span *ngIf="teamMemberModel.mail"> - </span> <a [href]="getMailContent()" *ngIf="teamMemberModel.mail" class="btn btn-info">{{ teamMemberModel.mail }}</a></h3>
-        <p>{{ teamMemberModel.job }}</p>
-        <p> {{ teamMemberModel.description }} </p>
+        <h3>{{ teamMemberModel.name }}
+            <span *ngIf="teamMemberModel.mail"> - </span>
+            <a [href]="getMailContent()" *ngIf="teamMemberModel.mail" class="btn btn-info">{{ teamMemberModel.mail }}</a>
+        </h3>
+        <p id="job">{{ teamMemberModel.job }}</p>
+        <p id="description"> {{ teamMemberModel.description }} </p>
     </div>
     <div class="col-md-2"></div>
 </div>
