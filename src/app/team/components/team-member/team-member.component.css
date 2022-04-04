@@ -1,4 +1,9 @@
 
+.inline h3{
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0;
+}
 
 h3 {
     font-family: Agency FB;

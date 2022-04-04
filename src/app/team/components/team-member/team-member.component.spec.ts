@@ -5,9 +5,9 @@ import { TeamMemberComponent } from './team-member.component';
 describe('TeamMemberComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ TeamMemberComponent ]
+      declarations: [TeamMemberComponent]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   it('should create', () => {
@@ -20,7 +20,7 @@ describe('TeamMemberComponent', () => {
 
     // given a team member component with william
     const teamMemberComponent: TeamMemberComponent = fixture.componentInstance;
-    teamMemberComponent.teamMemberModel = { name: 'wIlLiAm', description : 'foo', job: 'job', mail: '' };
+    teamMemberComponent.teamMemberModel = { name: 'wIlLiAm', description: 'foo', job: 'job', mail: '' };
 
     // when we trigger the change detection
     fixture.detectChanges();
@@ -28,16 +28,16 @@ describe('TeamMemberComponent', () => {
     // then we should have an title with the name
     const element = fixture.nativeElement;
     const titre = element.querySelector('h3');
-    expect(titre.textContent).withContext('You should have an name for the team member').not.toBeNull(); 
-    expect(titre.textContent).withContext('You should display the name').toBe('wIlLiAm ');      
-    // // and a job 
-    // const parent = element.querySelectorAll('p');
-    // var child_nodes = parent.childNodes;
-    // expect(child_nodes.item(0).textContent).withContext('You should have a job for the team member').not.toBeNull();    
-    // expect(child_nodes.item(0).textContent).withContext('You should display the job').toBe('job');         
-    // // and a description
-    // expect(child_nodes.item(1).textContent).withContext('You should have a description for the team member').not.toBeNull();    
-    // expect(child_nodes.item(1).textContent).withContext('You should display the foo').toBe('foo');     
+    expect(titre.textContent).withContext('You should have an name for the team member').not.toBeNull();
+    expect(titre.textContent).withContext('You should display the name').toBe('wIlLiAm');
+    // and a job 
+    const job = fixture.debugElement.nativeElement.querySelector('#job');
+    expect(job).withContext('You should have a job for the team member').not.toBeNull();
+    expect(job.textContent).withContext('You should display the job').toBe('job');
+    // and a description
+    const description = fixture.debugElement.nativeElement.querySelector('#description');
+    expect(description.textContent).withContext('You should have a description for the team member').not.toBeNull();
+    expect(description.textContent).withContext('You should display the foo').toBe('foo');
   });
 
   it('should have a link to send mail', () => {
@@ -45,7 +45,7 @@ describe('TeamMemberComponent', () => {
 
     // given a pony component with a PURPLE pony
     const teamMemberComponent: TeamMemberComponent = fixture.componentInstance;
-    teamMemberComponent.teamMemberModel = { name: 'wIlLiAm', description : 'foo', job: 'job', mail: 'mail@mail.com' };
+    teamMemberComponent.teamMemberModel = { name: 'wIlLiAm', description: 'foo', job: 'job', mail: 'mail@mail.com' };
 
     // when we trigger the change detection
     fixture.detectChanges();
@@ -60,7 +60,7 @@ describe('TeamMemberComponent', () => {
   it('should have method to get the image URL', () => {
     // given a team member component with a william member
     const teamMemberComponent: TeamMemberComponent = new TeamMemberComponent();
-    teamMemberComponent.teamMemberModel = { name: 'william', description : 'hehe', job: 'job', mail: 'mail@mail.com' };
+    teamMemberComponent.teamMemberModel = { name: 'william', description: 'hehe', job: 'job', mail: 'mail@mail.com' };
 
     // when we call the method for the URL
     const url = teamMemberComponent.getImageUrl();
@@ -69,18 +69,18 @@ describe('TeamMemberComponent', () => {
     expect(url).withContext('The URL built with `getPonyImageUrl` is not correct').toBe('assets/images/william.png');
   });
 
-  
+
   it('should have method to get the mailto URL and content', () => {
     // given a pony component with a PURPLE pony
     const teamMemberComponent: TeamMemberComponent = new TeamMemberComponent();
-    teamMemberComponent.teamMemberModel = { name: 'Fast', description : 'foo', job: 'job', mail: 'mail@mail.com' };
+    teamMemberComponent.teamMemberModel = { name: 'Fast', description: 'foo', job: 'job', mail: 'mail@mail.com' };
 
     // when we call the method for the URL
     const mailContent = teamMemberComponent.getMailContent();
 
     // then we should have a nice URL
     expect(mailContent).withContext('The mail to url built with `getMailContent` is not correct')
-                       .toContain('mailto:mail@mail.com?Subject=Contact&body=Bonjour,');
+      .toContain('mailto:mail@mail.com?Subject=Contact&body=Bonjour,');
   });
 
   it('should display an image and a legend', () => {
@@ -88,7 +88,7 @@ describe('TeamMemberComponent', () => {
 
     // given a pony component with a PURPLE pony
     const teamMemberComponent: TeamMemberComponent = fixture.componentInstance;
-    teamMemberComponent.teamMemberModel = { name: 'wIlLiAm', description : 'foo', job: 'job', mail: 'mail@mail.com' };
+    teamMemberComponent.teamMemberModel = { name: 'wIlLiAm', description: 'foo', job: 'job', mail: 'mail@mail.com' };
 
     // when we trigger the change detection
     fixture.detectChanges();
