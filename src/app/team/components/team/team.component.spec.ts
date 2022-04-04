@@ -2,7 +2,6 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { teamMember } from '../../models/teamMember.model';
 import { TeamService } from '../../services/team.service';
-import { TeamMemberComponent } from '../team-member/team-member.component';
 
 import { TeamComponent } from './team.component';
 
@@ -50,7 +49,7 @@ describe('TeamComponent', () => {
     const title = element.querySelector('h2');
     expect(title).withContext('You need an h2 element for the title').not.toBeNull();
     expect(title.textContent).withContext('The h2 element should contain the race name').toContain('L\'Equipe');
-    const directives = fixture.debugElement.queryAll(By.directive(TeamMemberComponent));
+    const directives = fixture.debugElement.queryAll(By.css('bap-team-member'));
     expect(directives).withContext('You should use the TeamMemberComponent in your template to display the team member').not.toBeNull();
     expect(directives.length).withContext('You should have five team-member components in your template').toBe(5);
   });

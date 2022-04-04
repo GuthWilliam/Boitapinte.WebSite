@@ -114,4 +114,15 @@ describe('MenuComponent', () => {
     expect(event.preventDefault).toHaveBeenCalled();
     expect(fakeRouter.navigate).toHaveBeenCalledWith(['/']);
   });
+  
+  it('should show navbar with beernote font', () => {
+    const fixture = TestBed.createComponent(MenuComponent);
+
+    fixture.detectChanges();
+
+    const element = fixture.nativeElement;
+    const info = element.querySelector('a.navbar-brand');
+    expect(info).withContext('You should have an `a` element with the classes `navbar-brand` to display the company name').not.toBeNull();
+    expect(info.textContent).withContext('the company name shoulde be Boitapinte').toContain('Boitapinte');
+  });
 });

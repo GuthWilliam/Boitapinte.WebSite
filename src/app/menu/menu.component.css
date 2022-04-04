@@ -1,3 +1,18 @@
+@font-face {
+    font-family: "Beer note trial";
+    src: url("../../assets/fonts/BEERNOTE.ttf") format("truetype");
+}
+
+a.navbar-brand{
+    font-family: "Beer note trial";
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+a.navbar-brand img {
+    height: 2em;
+    width: auto;
+}
+
 .navbar {
     background-color: var(--primaryColor);
 }

@@ -1,3 +1,15 @@
+# For redirecting a specific domain to use HTTPS, add the following:
+RewriteEngine On
+RewriteCond %{HTTP_HOST} ^boitapinte\.com [NC]
+RewriteCond %{SERVER_PORT} 80
+RewriteRule ^(.*)$ https://boitapinte.com/$1 [R,L]
+
+# For redirecting a specific domain to use HTTPS, add the following:
+RewriteEngine On
+RewriteCond %{HTTP_HOST} ^boitapinte\.fr [NC]
+RewriteCond %{SERVER_PORT} 80
+RewriteRule ^(.*)$ https://boitapinte.fr/$1 [R,L]
+
 RewriteEngine On
 # If an existing asset or directory is requested go to it as it is
 RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI} -f [OR]
