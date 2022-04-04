@@ -1,0 +1,6 @@
+
+.btn-primary{
+    background-color: var(--secondaryColor);
+    color: var(--secondaryTextColor);
+    border-color: var(--secondaryDarkColor);
+}

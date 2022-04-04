@@ -11,7 +11,8 @@ import { NgbCollapseModule } from '@ng-bootstrap/ng-bootstrap';
 import { TeamMemberComponent } from './team/components/team-member/team-member.component';
 import { TeamComponent } from './team/components/team/team.component';
 import { DemoComponent } from './demo/demo.component';
-import { ContactComponent } from './contact/contact.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ContactComponent } from './contact/component/contact.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,9 @@ import { ContactComponent } from './contact/contact.component';
     BrowserModule,
     HttpClientModule,
     RouterModule.forRoot(ROUTES),
-    NgbCollapseModule
+    NgbCollapseModule, 
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [Meta],
   bootstrap: [AppComponent]

@@ -6,9 +6,16 @@
     --primaryColor: #b2dfdb;
     --primaryLightColor: #e5ffff;
     --primaryDarkColor: #82ada9;
-    --secondaryColor: #b2dfdb;
-    --secondaryLightColor: #e5ffff;
-    --secondaryDarkColor: #82ada9;
+    --secondaryColor: #e0f2f1;
+    --secondaryLightColor: #ffffff;
+    --secondaryDarkColor: #aebfbe;
     --primaryTextColor: #000000;
     --secondaryTextColor: #000000;
+}
+
+h2 {
+    font-family: Agency FB;
+	font-size: 3em; 
+    margin-top: 25px;
+    text-align: center;
 }
