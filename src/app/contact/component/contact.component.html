@@ -1,34 +1,48 @@
 <div class="row">
     <div class="col-md-6 offset-md-3">
         <h2>Contact</h2>
-        
         <form (ngSubmit)="mail()" [formGroup]="contactForm">
-            <div class="col-md-6 mb-3">
-                <label for="fullname" class="form-label" id="login-label" prFormLabelValidation>Nom :</label>
-                <input id="fullname" class="form-control" type="text" formControlName="fullname" required/>
-                <div id="fullname-warning" *ngIf="mailCtrl.dirty && mailCtrl.hasError('required')" class="invalid-feedback">le nom est obligatoire</div>
-            </div>
-            <div class="col-md-6 mb-3">
-                <label for="mail" class="form-label" id="login-label" prFormLabelValidation>Email :</label>
-                <input id="mail" class="form-control" type="email" formControlName="mail" />
-                <div id="mail-warning" *ngIf="mailCtrl.dirty && mailCtrl.hasError('required')" class="invalid-feedback">le mail est obligatoire</div>
-            </div>
-            <div class="col-md-6 mb-3">
-                <label for="phone" class="form-label" id="login-label" prFormLabelValidation>Téléphone :</label>
-                <input id="phone" class="form-control" type="tel" formControlName="phone" />
-                <div id="phone-warning" *ngIf="phoneCtrl.dirty && phoneCtrl.hasError('required')" class="invalid-feedback">le numéro de téléphone est obligatoire</div>
-                <div id="phone-warning" *ngIf="phoneCtrl.dirty && phoneCtrl.hasError('pattern')" class="invalid-feedback">le numéro de téléphone est incorrect</div>
-            </div>
-            <div class="mb-3">
-                <label for="content" class="form-label" prFormLabel>Message</label>
-                <textarea  rows="6" class="form-control" formControlName="content" id="content">
-                </textarea>
-                <div id="content-warning" *ngIf="contentCtrl.dirty && contentCtrl.hasError('required')" class="invalid-feedback">Le contenu du message est obligatoire</div>
-                <div id="content-length-error" *ngIf="contentCtrl.dirty && contentCtrl.hasError('minlength')" class="invalid-feedback">
-                    Le message doit faire au moins 10 caractères.
+            <div class="form-row">
+                <div class="col-md-8 mb-3">
+                    <label for="fullname" class="form-label" id="login-label" prFormLabelValidation>Nom :</label>
+                    <input id="fullname" class="form-control" type="text" formControlName="fullname" />
+                    <div id="login-warning" class="text-danger" *ngIf="fullNameCtrl.dirty && fullNameCtrl.hasError('required')">
+                        <small>Le nom est obligatoire</small>
+                    </div>
                 </div>
+                <div class="col-md-8 mb-3">
+                    <label for="mail" class="form-label" id="login-label" prFormLabelValidation>Email :</label>
+                    <input id="mail" class="form-control" type="email" formControlName="mail" placeholder="name@example.com" />
+                    <div id="mail-warning-required" class="text-danger" *ngIf="mailCtrl.dirty && mailCtrl.hasError('required')">
+                        <small>le mail est obligatoire</small>
+                    </div>
+                    <div id="login-warning-required" class="text-danger" *ngIf="mailCtrl.dirty && mailCtrl.hasError('email')">
+                        <small>le mail n'est pas au bon format : name@example.com</small>
+                    </div>
+                </div>
+                <div class="col-md-8 mb-3">
+                    <label for="phone" class="form-label" id="login-label" prFormLabelValidation>Téléphone :</label>
+                    <input id="phone" class="form-control" type="tel" formControlName="phone" />
+                    <div id="login-warning-required" class="text-danger" *ngIf="phoneCtrl.dirty && phoneCtrl.hasError('required')">
+                        <small>le numéro de téléphone est obligatoire</small>
+                    </div>
+                    <div id="login-warning-required" class="text-danger" *ngIf="phoneCtrl.dirty && phoneCtrl.hasError('pattern')">
+                        <small>le numéro de téléphone est incorrect : 0757137489</small>
+                    </div>
+                    <div id="phone-warning" *ngIf="phoneCtrl.dirty && phoneCtrl.hasError('required')" class="invalid-feedback">le numéro de téléphone est obligatoire</div>
+                    <div id="phone-warning" *ngIf="phoneCtrl.dirty && phoneCtrl.hasError('pattern')" class="invalid-feedback">le numéro de téléphone est incorrect</div>
+                </div>
+                <div class="mb-3">
+                    <label for="content" class="form-label" prFormLabel>Message</label>
+                    <textarea id="message" rows="6" class="form-control" formControlName="message" >
+                </textarea>
+                    <div id="content-warning" *ngIf="messageCtrl.dirty && messageCtrl.hasError('required')" class="invalid-feedback">Le contenu du message est obligatoire</div>
+                    <div id="content-length-error" *ngIf="messageCtrl.dirty && messageCtrl.hasError('minlength')" class="invalid-feedback">
+                        Le message doit faire au moins 10 caractères.
+                    </div>
+                </div>
+                <button class="btn btn-primary" type="submit" [disabled]="contactForm.invalid">Envoyer</button>
             </div>
-            <button class="btn btn-primary" type="submit" [disabled]="contactForm.invalid">Envoyer</button>
         </form>
     </div>
 </div>

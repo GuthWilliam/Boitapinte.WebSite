@@ -4,3 +4,7 @@
     color: var(--secondaryTextColor);
     border-color: var(--secondaryDarkColor);
 }
+
+.alert {
+    height:40%;    
+ }
