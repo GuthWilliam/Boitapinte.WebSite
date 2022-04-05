@@ -19,7 +19,7 @@ export class ContactComponent {
     this.mailCtrl = fb.control('', [Validators.required, Validators.email]);
     this.phoneCtrl = fb.control('', [Validators.required, Validators.pattern('^0[1-9]([-. ]?[0-9]{2}){4}$')]);
     this.contentCtrl = fb.control('', [Validators.required, Validators.minLength(10)]);
-    this.contentCtrl.setValue('Bonjour,\n\nJe souhaite vous contacter pour plus d\'informations sur votre projet.');
+    this.contentCtrl.setValue('Bonjour,\n\nJe souhaite vous contacter pour avoir plus d\'informations sur votre projet.');
     this.contactForm = fb.group({
       fullname: this.fullNameCtrl,
       mail: this.mailCtrl,

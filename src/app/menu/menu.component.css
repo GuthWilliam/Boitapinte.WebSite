@@ -7,16 +7,27 @@ a.navbar-brand{
     font-family: "Beer note trial";
     font-size: 2em;
     margin-bottom: 10px;
+    padding-top: -15px;
 }
 a.navbar-brand img {
-    height: 2em;
+    height: 4em;
     width: auto;
 }
-
+.header-dark {
+    position: relative;
+    display: flex;
+    background-color: var(--primaryDarkColor);
+    height: 15px;
+    width: 110%;
+    margin-left: -15px;
+    padding: 0;
+}
 .navbar {
     background-color: var(--primaryColor);
 }
-
+.navbar-light .navbar-brand{
+    color: var(--primaryTextColor);
+}
 a {
     color: var(--primaryTextColor);
     font-family: 'Roboto', sans-serif;
