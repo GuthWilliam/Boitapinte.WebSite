@@ -14,14 +14,14 @@
             </div>
             <div class="form-row" *ngIf="HasError === null">
                 <div class="col-md-8 mb-3">
-                    <label for="fullname" class="form-label" id="login-label" prFormLabelValidation>Nom :</label>
+                    <label for="fullname" class="form-label" id="login-label" prFormLabelValidation><span class="text-danger">* </span> Nom : </label>
                     <input id="fullname" class="form-control" type="text" formControlName="fullname" />
                     <div id="login-warning" class="text-danger" *ngIf="fullNameCtrl.dirty && fullNameCtrl.hasError('required')">
                         <small>Le nom est obligatoire</small>
                     </div>
                 </div>
                 <div class="col-md-8 mb-3">
-                    <label for="mail" class="form-label" id="login-label" prFormLabelValidation>Email :</label>
+                    <label for="mail" class="form-label" id="login-label" prFormLabelValidation><span class="text-danger">* </span>Email :</label>
                     <input id="mail" class="form-control" type="email" formControlName="mail" placeholder="name@example.com" />
                     <div id="mail-warning-required" class="text-danger" *ngIf="mailCtrl.dirty && mailCtrl.hasError('required')">
                         <small>le mail est obligatoire</small>
@@ -31,7 +31,7 @@
                     </div>
                 </div>
                 <div class="col-md-8 mb-3">
-                    <label for="phone" class="form-label" id="login-label" prFormLabelValidation>Téléphone :</label>
+                    <label for="phone" class="form-label" id="login-label" prFormLabelValidation><span class="text-danger">* </span>Téléphone :</label>
                     <input id="phone" class="form-control" type="tel" formControlName="phone" />
                     <div id="login-warning-required" class="text-danger" *ngIf="phoneCtrl.dirty && phoneCtrl.hasError('required')">
                         <small>le numéro de téléphone est obligatoire</small>
@@ -43,7 +43,7 @@
                     <div id="phone-warning" *ngIf="phoneCtrl.dirty && phoneCtrl.hasError('pattern')" class="invalid-feedback">le numéro de téléphone est incorrect</div>
                 </div>
                 <div class="mb-3">
-                    <label for="content" class="form-label" prFormLabel>Message</label>
+                    <label for="content" class="form-label" prFormLabel><span class="text-danger">* </span>Message</label>
                     <textarea id="message" rows="6" class="form-control" formControlName="message">
                 </textarea>
                     <div id="content-warning" *ngIf="messageCtrl.dirty && messageCtrl.hasError('required')" class="invalid-feedback">Le contenu du message est obligatoire</div>
@@ -52,7 +52,7 @@
                     </div>
                 </div>
                 <div class="d-flex align-items-center">
-                    <button class="btn btn-primary" type="submit" [disabled]="contactForm.invalid || isLoading">Envoyer</button>
+                    <button class="btn btn-primary" type="submit" [disabled]="isLoading">Envoyer</button>
                     <div class="spinner-border ml-auto spinner" role="status" aria-hidden="true" *ngIf="isLoading"></div>
                 </div>
             </div>
