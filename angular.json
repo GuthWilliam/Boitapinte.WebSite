@@ -25,7 +25,8 @@
             "assets": [
               "src/favicon.ico",
               "src/assets",
-              "src/.htaccess"
+              "src/.htaccess",
+              "src/mail.php"
             ],
             "styles": [
               "node_modules/bootstrap/dist/css/bootstrap.min.css",

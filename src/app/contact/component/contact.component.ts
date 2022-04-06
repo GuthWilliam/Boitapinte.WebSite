@@ -8,9 +8,9 @@ import { MailingService } from '../mailing.service';
 })
 
 export class ContactComponent implements OnInit {
-  HasError : boolean | null = null;
-  isLoading : boolean = false;
-  errorMessage : String  | null = null;
+  HasError: boolean | null = null;
+  isLoading: boolean = false;
+  errorMessage: String | null = null;
   contactForm: FormGroup;
 
   fullNameCtrl: FormControl;
@@ -30,7 +30,7 @@ export class ContactComponent implements OnInit {
       message: this.messageCtrl,
     })
   }
-  
+
   ngOnInit(): void {
     this.messageCtrl.setValue('Bonjour,\n\nJe souhaite vous contacter pour avoir plus d\'informations sur votre projet.');
   };
@@ -38,17 +38,25 @@ export class ContactComponent implements OnInit {
   mail(): void {
     this.isLoading = true;
     this.mailingService.mail(this.fullNameCtrl.value, this.mailCtrl.value, this.phoneCtrl.value, this.messageCtrl.value)
-    .subscribe( message => {
-      this.isLoading = false;
-      if(message == '') {
-        this.HasError = false;
-        this.contactForm.reset();
-        this.errorMessage = null;
-      }else{
-        this.HasError = true;
-        this.errorMessage = message;
-      }
-    });
+      .subscribe({
+        next: (v) => {
+          console.log(v);
+          this.isLoading = false;
+          if (v == '') {
+            this.HasError = false;
+            this.contactForm.reset();
+            this.errorMessage = null;
+          } else {
+            this.HasError = true;
+            this.errorMessage = v;
+          }
+        },
+        error: (e) => {
+          console.error(e);
+          this.HasError = true;
+          this.errorMessage = e;
+        }
+      });
   }
 }
 
