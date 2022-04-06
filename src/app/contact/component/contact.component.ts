@@ -8,6 +8,9 @@ import { MailingService } from '../mailing.service';
 })
 
 export class ContactComponent implements OnInit {
+  HasError : boolean | null = null;
+  isLoading : boolean = false;
+  errorMessage : String  | null = null;
   contactForm: FormGroup;
 
   fullNameCtrl: FormControl;
@@ -33,7 +36,19 @@ export class ContactComponent implements OnInit {
   };
 
   mail(): void {
-    this.mailingService.mail(this.fullNameCtrl.value, this.mailCtrl.value, this.phoneCtrl.value, this.messageCtrl.value);
+    this.isLoading = true;
+    this.mailingService.mail(this.fullNameCtrl.value, this.mailCtrl.value, this.phoneCtrl.value, this.messageCtrl.value)
+    .subscribe( message => {
+      this.isLoading = false;
+      if(message == '') {
+        this.HasError = false;
+        this.contactForm.reset();
+        this.errorMessage = null;
+      }else{
+        this.HasError = true;
+        this.errorMessage = message;
+      }
+    });
   }
 }
 

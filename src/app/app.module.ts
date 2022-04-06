@@ -8,7 +8,7 @@ import { ROUTES } from './app.routes';
 import { AppComponent } from './app.component';
 import { MenuComponent } from './menu/menu.component';
 import { HomeComponent } from './home/home.component';
-import { NgbCollapseModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbCollapseModule, NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { TeamMemberComponent } from './team/components/team-member/team-member.component';
 import { TeamComponent } from './team/components/team/team.component';
 import { DemoComponent } from './demo/demo.component';
@@ -32,7 +32,8 @@ import { ContactComponent } from './contact/component/contact.component';
     RouterModule.forRoot(ROUTES),
     NgbCollapseModule, 
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgbModule
   ],
   providers: [Meta],
   bootstrap: [AppComponent]

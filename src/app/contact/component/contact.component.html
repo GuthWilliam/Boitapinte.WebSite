@@ -2,7 +2,17 @@
     <div class="col-md-6 offset-md-3">
         <h2>Contact</h2>
         <form (ngSubmit)="mail()" [formGroup]="contactForm">
-            <div class="form-row">
+            <div class="form-row" *ngIf="HasError !== null">
+                <div class="col-md-12 mb-3">
+                    <ngb-alert *ngIf="!HasError" type="success" (closed)="HasError = null">message envoyé avec succès.</ngb-alert>
+                    <ngb-alert *ngIf="HasError" type="danger" (closed)="HasError = null">
+                        Impossible d'envoyer le message, envoyer un mail directement a <a target="_blank" href="mailto:contact@boitapinte.fr?Subject=Contact&amp;body=Bonjour,
+                        %0D%0A%0D%0AJe souhaite vous contacter pour plus d'informations sur votre projet.">contact@boitapinte.fr</a>
+                    </ngb-alert>
+                    <ngb-alert *ngIf="HasError" type="danger" (closed)="HasError = null"> {{errorMessage}} </ngb-alert>
+                </div>
+            </div>
+            <div class="form-row" *ngIf="HasError === null">
                 <div class="col-md-8 mb-3">
                     <label for="fullname" class="form-label" id="login-label" prFormLabelValidation>Nom :</label>
                     <input id="fullname" class="form-control" type="text" formControlName="fullname" />
@@ -34,14 +44,17 @@
                 </div>
                 <div class="mb-3">
                     <label for="content" class="form-label" prFormLabel>Message</label>
-                    <textarea id="message" rows="6" class="form-control" formControlName="message" >
+                    <textarea id="message" rows="6" class="form-control" formControlName="message">
                 </textarea>
                     <div id="content-warning" *ngIf="messageCtrl.dirty && messageCtrl.hasError('required')" class="invalid-feedback">Le contenu du message est obligatoire</div>
                     <div id="content-length-error" *ngIf="messageCtrl.dirty && messageCtrl.hasError('minlength')" class="invalid-feedback">
                         Le message doit faire au moins 10 caractères.
                     </div>
                 </div>
-                <button class="btn btn-primary" type="submit" [disabled]="contactForm.invalid">Envoyer</button>
+                <div class="d-flex align-items-center">
+                    <button class="btn btn-primary" type="submit" [disabled]="contactForm.invalid || isLoading">Envoyer</button>
+                    <div class="spinner-border ml-auto spinner" role="status" aria-hidden="true" *ngIf="isLoading"></div>
+                </div>
             </div>
         </form>
     </div>

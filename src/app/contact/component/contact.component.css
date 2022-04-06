@@ -8,3 +8,8 @@
 .alert {
     height:40%;    
  }
+
+ .spinner {
+    color: var(--primaryDarkColor);
+    margin-left: 10px;
+ }

@@ -5,7 +5,6 @@ import { teamMember } from '../models/teamMember.model';
   providedIn: 'root'
 })
 export class TeamService {
-
   constructor() { }
 
   getTeam(): Array<teamMember> {
