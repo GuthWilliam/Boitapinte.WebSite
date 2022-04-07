@@ -28,6 +28,16 @@ https://material.io/resources/color/#!/?view.left=0&view.right=1&primary.color=b
 
 
 :root {
+    - ![#b2dfdb](https://via.placeholder.com/15/b2dfdb/000000?text=+) `#b2dfdb` --primaryColor
+    - ![#b2dfdb](https://via.placeholder.com/15/e5ffff/000000?text=+) `#e5ffff` --primaryLightColor
+    - ![#82ada9](https://via.placeholder.com/15/82ada9/000000?text=+) `#82ada9` --primaryDarkColor
+    - ![#e0f2f1](https://via.placeholder.com/15/e0f2f1/000000?text=+) `#e0f2f1` --secondaryColor
+    - ![#ffffff](https://via.placeholder.com/15/b2dfdb/000000?text=+) `#ffffff` --secondaryLightColor
+    - ![#aebfbe](https://via.placeholder.com/15/b2dfdb/000000?text=+) `#aebfbe` --secondaryDarkColor
+    - ![#282828](https://via.placeholder.com/15/b2dfdb/000000?text=+) `#282828` --primaryTextColor
+    - ![#000000](https://via.placeholder.com/15/b2dfdb/000000?text=+) `#000000` --secondaryTextColor
+
+    css:
     --primaryColor: #b2dfdb;
     --primaryLightColor: #e5ffff;
     --primaryDarkColor: #82ada9;

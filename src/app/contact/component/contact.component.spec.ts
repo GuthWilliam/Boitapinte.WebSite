@@ -1,13 +1,26 @@
+import { HttpClientModule } from '@angular/common/http';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ReactiveFormsModule } from '@angular/forms';
 import { By } from '@angular/platform-browser';
+import { NgbAlertModule } from '@ng-bootstrap/ng-bootstrap';
+import { MailingService } from '../mailing.service';
 
 import { ContactComponent } from './contact.component';
 
 describe('ContactComponent', () => {
+  const fakeMailingService = jasmine.createSpyObj<MailingService>('MailingService', ['mail']);
   let component: ContactComponent;
   let fixture: ComponentFixture<ContactComponent>;
 
   beforeEach(async () => {
+
+    TestBed.configureTestingModule({
+      imports: [NgbAlertModule, ReactiveFormsModule, HttpClientModule],
+      providers: [
+        { provide: MailingService, useValue: fakeMailingService }
+      ]
+    });
+
     await TestBed.configureTestingModule({
       declarations: [ ContactComponent ]
     })
@@ -25,7 +38,7 @@ describe('ContactComponent', () => {
   });
 
   
-  it('should call the register method on submit', () => {
+  it('should call the mail method on submit', () => {
     const fixture = TestBed.createComponent(ContactComponent);
     spyOn(fixture.componentInstance, 'mail');
 
