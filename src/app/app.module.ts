@@ -11,7 +11,6 @@ import { HomeComponent } from './home/home.component';
 import { NgbCollapseModule, NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { TeamMemberComponent } from './team/components/team-member/team-member.component';
 import { TeamComponent } from './team/components/team/team.component';
-import { DemoComponent } from './demo/demo.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ContactComponent } from './contact/component/contact.component';
 
@@ -22,7 +21,6 @@ import { ContactComponent } from './contact/component/contact.component';
     MenuComponent,
     HomeComponent,
     TeamComponent,
-    DemoComponent,
     ContactComponent
   ],
   imports: [
