@@ -9,8 +9,8 @@ import { Meta, Title } from '@angular/platform-browser';
 export class HomeComponent implements OnInit {
 
   title = 'Boitapinte';
-  description = 'Boitapinte : suivez la consomation des clients, detectez vos meilleurs ventes, prévoyez vos remplacements de futs...'
-  descriptionComplete = 'Boitapinte : suivez la consomation des clients, detectez vos meilleurs ventes, prévoyez vos remplacements de futs......'
+  description = 'Boitapinte : suivez la consommation des clients, détectez vos meilleures ventes, prévoyez vos remplacements de fûts...'
+  descriptionComplete = 'Boitapinte : suivez la consommation des clients, détectez vos meilleures ventes, prévoyez vos remplacements de fûts......'
 
   constructor(private metaService: Meta, private titleService: Title) { }
 
