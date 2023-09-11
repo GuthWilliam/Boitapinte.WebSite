@@ -1,0 +1,23 @@
+.table {
+  border-collapse: collapse;
+  width: 100%;
+  border: 1px solid #ddd;
+}
+
+.table th, .table td {
+  text-align: left;
+  padding: 8px;
+}
+
+.table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.table:hover tbody tr:hover {
+  background-color: #ddd;
+}
+.align-right {
+  text-align: right;
+  vertical-align: top;  /* To align content to the upper right */
+}
+

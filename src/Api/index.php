@@ -2,6 +2,8 @@
 ini_set('display_errors',1);
 require __DIR__ . "/inc/bootstrap.php";
 
+header("Access-Control-Allow-Origin: *");
+
 $apiKey = isset($_SERVER['HTTP_X_API_KEY']) ? $_SERVER['HTTP_X_API_KEY'] : null;
 $requestMethod = $_SERVER["REQUEST_METHOD"];
 

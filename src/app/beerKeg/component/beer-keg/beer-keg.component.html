@@ -1,0 +1,30 @@
+<div class="container mt-5">
+  <div class="table-responsive">
+      <table class="table table-hover">
+          <thead class="thead-dark">
+              <tr>
+                  <th scope="col">BeerKegRefillId</th>
+                  <th scope="col">BarName</th>
+                  <th scope="col">BeerName</th>
+                  <th scope="col">BeerKegId</th>
+                  <th scope="col">RefillDateTime</th>
+                  <th scope="col">QuantityLeftInKeg</th>
+                  <th scope="col">QuantityRefilled</th>
+                  <th scope="col">InsertionDate</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr *ngFor="let refill of refills">
+                  <td>{{ refill.BeerKegRefillId }}</td>
+                  <td>{{ refill.BarName }}</td>
+                  <td>{{ refill.BeerName }}</td>
+                  <td>{{ refill.BeerKegId }}</td>
+                  <td>{{ refill.RefillDateTime | date:'dd/MM/yyyy HH:mm:ss':'GMT+0200':'fr' }}</td>
+                  <td class="align-right">{{ roundToTwoDecimals(refill.QuantityLeftInKeg)}} L</td>
+                  <td class="align-right">{{ roundToTwoDecimals(refill.QuantityRefilled) }} L</td>
+                  <td>{{ refill.InsertionDate | date:'dd/MM/yyyy HH:mm:ss':'GMT+0200':'fr' }}</td>
+              </tr>
+          </tbody>
+      </table>
+  </div>
+</div>

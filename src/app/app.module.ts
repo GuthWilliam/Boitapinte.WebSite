@@ -1,8 +1,9 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { NgModule, LOCALE_ID } from '@angular/core';
+import { CommonModule, DecimalPipe } from '@angular/common';
 import { BrowserModule, Meta } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
+
 
 import { ROUTES } from './app.routes';
 import { AppComponent } from './app.component';
@@ -13,6 +14,14 @@ import { TeamMemberComponent } from './team/components/team-member/team-member.c
 import { TeamComponent } from './team/components/team/team.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ContactComponent } from './contact/component/contact.component';
+import { BeerKegComponent } from './beerKeg/component/beer-keg/beer-keg.component';
+
+// Import the locale data
+import { registerLocaleData } from '@angular/common';
+import localeFr from '@angular/common/locales/fr';
+
+// Register the locale data
+registerLocaleData(localeFr);
 
 @NgModule({
   declarations: [
@@ -21,19 +30,21 @@ import { ContactComponent } from './contact/component/contact.component';
     MenuComponent,
     HomeComponent,
     TeamComponent,
-    ContactComponent
+    ContactComponent,
+    BeerKegComponent
   ],
   imports: [
     CommonModule,
     BrowserModule,
     HttpClientModule,
     RouterModule.forRoot(ROUTES),
-    NgbCollapseModule, 
+    NgbCollapseModule,
     FormsModule,
     ReactiveFormsModule,
-    NgbModule
+    NgbModule,
+    CommonModule
   ],
-  providers: [Meta],
+  providers: [Meta, { provide: LOCALE_ID, useValue: 'fr-FR' }, DecimalPipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
